@@ -1,47 +1,39 @@
 package com.example.captainsclub2
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.captainsclub2.navigation.AppNavGraph
 import com.example.captainsclub2.ui.theme.CaptainsClub2Theme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint // Обязательно для Hilt
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            CaptainsClub2Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+        try {
+            super.onCreate(savedInstanceState)
+            setContent {
+                CaptainsClub2Theme {
+                    AppNavGraph()
                 }
             }
+        } catch (e: Exception) {
+            Log.e("CRASH", "App crashed", e)
+            throw e
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun DefaultPreview() {
     CaptainsClub2Theme {
-        Greeting("Android")
+        AppNavGraph()
     }
 }

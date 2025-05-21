@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "371246081953",
+    "project_id": "captains-club-2",
+    "storage_bucket": "captains-club-2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371246081953:android:34c8505175144f701a0de0",
+        "android_client_info": {
+          "package_name": "com.example.captainsclub2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgJFXZq4Yg78sypH0HPJesLFci-Siwf-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CaptainsClub2</string>
+    <string name="rental_tab">Прокат</string>
+    <string name="report_tab">Отчет</string>
+    <string name="matros_tab">Матросы</string>
+    <string name="ducks_button">Утки</string>
+    <string name="yachts_button">Яхты</string>
+    <string name="souvenirs_button">Сувениры</string>
+    <string name="fines_button">Штрафы</string>
 </resources>
